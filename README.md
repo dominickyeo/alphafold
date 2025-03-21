@@ -84,7 +84,7 @@ Please follow these steps:
 1.  Check that AlphaFold will be able to use a GPU by running:
 
     ```bash
-    docker run --rm --gpus all nvidia/cuda:12.8-base nvidia-smi
+    docker run --rm --gpus all nvidia/cuda:12.8.1-base-ubuntu24.04 nvidia-smi
     ```
 
     The output of this command should show a list of your GPUs. If it doesn't,
