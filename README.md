@@ -55,7 +55,7 @@ Please follow these steps:
 1.  Clone this repository and `cd` into it.
 
     ```bash
-    git clone https://github.com/deepmind/alphafold.git
+    git clone https://github.com/dominickyeo/alphafold.git
     cd ./alphafold
     ```
 
@@ -84,7 +84,7 @@ Please follow these steps:
 1.  Check that AlphaFold will be able to use a GPU by running:
 
     ```bash
-    docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+    docker run --rm --gpus all nvidia/cuda:12.8-base nvidia-smi
     ```
 
     The output of this command should show a list of your GPUs. If it doesn't,
