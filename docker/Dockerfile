@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ARG CUDA=12.8.0
+ARG CUDA=12.8.1
 FROM nvidia/cuda:${CUDA}-cudnn-runtime-ubuntu24.04
 # FROM directive resets ARGS, so we specify again (the value is retained if
 # previously set).
@@ -56,9 +56,9 @@ RUN wget -q -P /tmp \
 # Install Conda packages.
 ENV PATH="/opt/conda/bin:$PATH"
 ENV LD_LIBRARY_PATH="/opt/conda/lib:$LD_LIBRARY_PATH"
-RUN conda install --quiet --yes conda==25.1.1 pip python=3.11 \
-    && conda install --quiet --yes --channel nvidia cuda=${CUDA_VERSION} \
-    && conda install --quiet --yes --channel conda-forge openmm=8.0.0 pdbfixer \
+RUN conda install --yes conda==24.11.1 pip python=3.11 \
+    && conda install --yes --channel nvidia cuda=${CUDA_VERSION} \
+    && conda install --yes --channel conda-forge openmm=8.0.0 pdbfixer \
     && conda clean --all --force-pkgs-dirs --yes
 
 COPY . /app/alphafold
