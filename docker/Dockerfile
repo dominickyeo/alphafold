@@ -38,7 +38,7 @@ RUN apt-get update --quiet \
     && apt-get clean
 
 # Compile HHsuite from source.
-RUN git clone --branch v3.3.0 --single-branch https://github.com/soedinglab/hh-suite.git /tmp/hh-suite \
+RUN git clone https://github.com/dominickyeo/hh-suite /tmp/hh-suite \
     && mkdir /tmp/hh-suite/build \
     && pushd /tmp/hh-suite/build \
     && cmake -DCMAKE_INSTALL_PREFIX=/opt/hhsuite .. \
