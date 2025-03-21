@@ -24,8 +24,7 @@ sudo apt-get update
 sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 sudo docker run --rm --gpus all nvidia/cuda:12.8.1-base-ubuntu24.04 nvidia-smi
-sudo apt-get install git
-git clone https://github.com/deepmind/alphafold.git
+
 cd alphafold
 docker build -f docker/Dockerfile -t alphafold .
 sudo apt-get install python3-pip
