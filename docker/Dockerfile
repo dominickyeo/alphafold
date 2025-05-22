@@ -48,10 +48,16 @@ RUN git clone https://github.com/dominickyeo/hh-suite /tmp/hh-suite \
     && rm -rf /tmp/hh-suite
 
 # Install Miniconda package manager.
+# RUN wget -q -P /tmp \
+# https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+#   && bash /tmp/Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda \
+#   && rm /tmp/Miniconda3-latest-Linux-x86_64.sh
+    
+# Install Miniforge package manager.
 RUN wget -q -P /tmp \
-  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && bash /tmp/Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda \
-    && rm /tmp/Miniconda3-latest-Linux-x86_64.sh
+  https://github.com/conda-forge/miniforge/releases/download/25.3.0-1/Miniforge3-25.3.0-1-Linux-x86_64.sh \
+    && bash /tmp/Miniforge3-25.3.0-1-Linux-x86_64.sh -b -p /opt/conda \
+    && rm /tmp/Miniforge3-25.3.0-1-Linux-x86_64.sh
 
 # Install Conda packages.
 ENV PATH="/opt/conda/bin:$PATH"
