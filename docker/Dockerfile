@@ -55,7 +55,7 @@ RUN git clone https://github.com/dominickyeo/hh-suite /tmp/hh-suite \
     
 # Install Miniforge package manager.
 RUN wget -q -P /tmp \
-  https://github.com/conda-forge/miniforge/releases/download/25.3.0-1/Miniforge3-25.3.0-1-Linux-x86_64.sh \
+https://github.com/conda-forge/miniforge/releases/download/25.3.0-1/Miniforge3-25.3.0-1-Linux-x86_64.sh \
     && bash /tmp/Miniforge3-25.3.0-1-Linux-x86_64.sh -b -p /opt/conda \
     && rm /tmp/Miniforge3-25.3.0-1-Linux-x86_64.sh
 
